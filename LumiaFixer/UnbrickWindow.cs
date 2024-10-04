@@ -102,6 +102,7 @@ namespace LumiaFixer
             if (!string.IsNullOrEmpty(WDRTPath.SelectedPath) && !string.IsNullOrEmpty(EDEPath.FileName) &&
                 !string.IsNullOrEmpty(EDPPath.FileName) && !string.IsNullOrEmpty(FFUPath.FileName))
             {
+                DisableUI();
                 consoleOutput.Text = "Starting recovery process...\n";
                 consoleOutput.AppendText("If you do not immediately see any output, don't worry and just be patient.\n");
                 consoleOutput.AppendText("----------------------------\n");
@@ -113,13 +114,14 @@ namespace LumiaFixer
 
                 string arguments = $"-mode emergency -hexfile {edePath} -edfile {edpPath} -ffufile {ffuPath}";
 
-                int exitCode = await RunProcessAsync(thor2Path, arguments, true);
+                int exitCode = await RunProcessAsync(thor2Path, arguments);
 
                 if (exitCode != 0)
                 {
                     consoleOutput.AppendText("----------------------------\n");
                     consoleOutput.AppendText("Recovery process failed. No reboot will be initiated." + Environment.NewLine);
                     consoleOutput.ScrollToCaret();
+                    EnableUI();
 
                     return;
                 }
@@ -130,18 +132,22 @@ namespace LumiaFixer
 
                 string rebootArguments = $"-mode rnd -bootnormalmode";
 
-                int rebootExitCode = await RunProcessAsync(thor2Path, rebootArguments, false);
+                int rebootExitCode = await RunProcessAsync(thor2Path, rebootArguments);
 
                 if (rebootExitCode != 0)
                 {
+                    consoleOutput.AppendText("----------------------------\n");
                     consoleOutput.AppendText("Failed to restart your device. Please restart it manually." + Environment.NewLine);
                     consoleOutput.ScrollToCaret();
+                    EnableUI();
 
                     return;
                 }
 
+                consoleOutput.AppendText("----------------------------\n");
                 consoleOutput.AppendText("Device restarted successfully." + Environment.NewLine);
                 consoleOutput.ScrollToCaret();
+                EnableUI();
             }
             else
             {
@@ -154,7 +160,27 @@ namespace LumiaFixer
             MessageBox.Show("This will be implemented in the future.");
         }
 
-        private async Task<int> RunProcessAsync(string fileName, string arguments, Boolean logging)
+        private void DisableUI()
+        {
+            openWDRTButton.Enabled = false;
+            openEDEButton.Enabled = false;
+            openEDPButton.Enabled = false;
+            openFFUButton.Enabled = false;
+            startRecoveryButton.Enabled = false;
+            faqButton.Enabled = false;
+        }
+
+        private void EnableUI()
+        {
+            openWDRTButton.Enabled = true;
+            openEDEButton.Enabled = true;
+            openEDPButton.Enabled = true;
+            openFFUButton.Enabled = true;
+            startRecoveryButton.Enabled = true;
+            faqButton.Enabled = true;
+        }
+
+        private async Task<int> RunProcessAsync(string fileName, string arguments)
         {
             int exitCode = -1;
             var tcs = new TaskCompletionSource<int>();
@@ -163,7 +189,7 @@ namespace LumiaFixer
             {
                 FileName = fileName,
                 Arguments = arguments,
-                RedirectStandardOutput = logging,
+                RedirectStandardOutput = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
@@ -173,28 +199,25 @@ namespace LumiaFixer
                 process.StartInfo = startInfo;
                 process.EnableRaisingEvents = true;
 
-                if (logging)
+                process.OutputDataReceived += new System.Diagnostics.DataReceivedEventHandler((s, ev) =>
                 {
-                    process.OutputDataReceived += new System.Diagnostics.DataReceivedEventHandler((s, ev) =>
+                    this.Invoke((MethodInvoker)delegate
                     {
-                        this.Invoke((MethodInvoker)delegate
-                        {
-                            consoleOutput.AppendText(ev.Data + Environment.NewLine);
-                            consoleOutput.SelectionStart = consoleOutput.Text.Length;
-                            consoleOutput.ScrollToCaret();
-                        });
+                        consoleOutput.AppendText(ev.Data + Environment.NewLine);
+                        consoleOutput.SelectionStart = consoleOutput.Text.Length;
+                        consoleOutput.ScrollToCaret();
                     });
-                }
+                });
 
-                process.Exited += (s, ev) =>
+                process.Exited += async (s, ev) =>
                 {
+                    await Task.Run(() => process.WaitForExit());
                     exitCode = process.ExitCode;
                     tcs.SetResult(exitCode);
                 };
 
                 process.Start();
-
-                if (logging) { process.BeginOutputReadLine(); }
+                process.BeginOutputReadLine();
 
                 return await tcs.Task;
             }
