@@ -72,7 +72,7 @@
             // openEDEButton
             // 
             this.openEDEButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openEDEButton.Location = new System.Drawing.Point(19, 161);
+            this.openEDEButton.Location = new System.Drawing.Point(19, 163);
             this.openEDEButton.Name = "openEDEButton";
             this.openEDEButton.Size = new System.Drawing.Size(107, 26);
             this.openEDEButton.TabIndex = 3;
@@ -86,7 +86,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 143);
+            this.label1.Location = new System.Drawing.Point(16, 145);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(91, 15);
             this.label1.TabIndex = 4;
@@ -95,7 +95,7 @@
             // openEDPButton
             // 
             this.openEDPButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openEDPButton.Location = new System.Drawing.Point(19, 193);
+            this.openEDPButton.Location = new System.Drawing.Point(19, 195);
             this.openEDPButton.Name = "openEDPButton";
             this.openEDPButton.Size = new System.Drawing.Size(107, 26);
             this.openEDPButton.TabIndex = 5;
@@ -108,7 +108,7 @@
             this.EDEPathLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EDEPathLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDEPathLabel.Location = new System.Drawing.Point(132, 161);
+            this.EDEPathLabel.Location = new System.Drawing.Point(132, 163);
             this.EDEPathLabel.Name = "EDEPathLabel";
             this.EDEPathLabel.Size = new System.Drawing.Size(624, 26);
             this.EDEPathLabel.TabIndex = 6;
@@ -120,7 +120,7 @@
             this.EDPPathLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.EDPPathLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDPPathLabel.Location = new System.Drawing.Point(132, 193);
+            this.EDPPathLabel.Location = new System.Drawing.Point(132, 195);
             this.EDPPathLabel.Name = "EDPPathLabel";
             this.EDPPathLabel.Size = new System.Drawing.Size(624, 26);
             this.EDPPathLabel.TabIndex = 7;
@@ -184,6 +184,7 @@
             this.startRecoveryButton.TabIndex = 13;
             this.startRecoveryButton.Text = "start recovery";
             this.startRecoveryButton.UseVisualStyleBackColor = true;
+            this.startRecoveryButton.Click += new System.EventHandler(this.startRecoveryButton_Click);
             // 
             // WDRTPathLabel
             // 
@@ -233,7 +234,7 @@
             this.consoleOutput.ReadOnly = true;
             this.consoleOutput.Size = new System.Drawing.Size(737, 112);
             this.consoleOutput.TabIndex = 17;
-            this.consoleOutput.Text = "console output will be shown here";
+            this.consoleOutput.Text = "";
             // 
             // faqButton
             // 
@@ -245,6 +246,7 @@
             this.faqButton.TabIndex = 18;
             this.faqButton.Text = "i have an issue";
             this.faqButton.UseVisualStyleBackColor = true;
+            this.faqButton.Click += new System.EventHandler(this.faqButton_Click);
             // 
             // UnbrickWindow
             // 
@@ -274,7 +276,6 @@
             this.Name = "UnbrickWindow";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "LumiaFixer";
-            this.Load += new System.EventHandler(this.UnbrickWindow_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -95,5 +95,76 @@ namespace LumiaFixer
                 }
             }
         }
+
+        private async void startRecoveryButton_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(WDRTPath.SelectedPath) && !string.IsNullOrEmpty(EDEPath.FileName) &&
+                !string.IsNullOrEmpty(EDPPath.FileName) && !string.IsNullOrEmpty(FFUPath.FileName))
+            {
+                consoleOutput.Text = "Starting recovery process...\n";
+                consoleOutput.AppendText("If you do not immediately see any output, don't worry and just be patient.\n");
+                consoleOutput.AppendText("----------------------------\n");
+
+                string thor2Path = System.IO.Path.Combine(WDRTPath.SelectedPath, "thor2.exe");
+                string edePath = $"\"{EDEPath.FileName.Trim()}\"";
+                string edpPath = $"\"{EDPPath.FileName.Trim()}\"";
+                string ffuPath = $"\"{FFUPath.FileName.Trim()}\"";
+
+                string arguments = $"-mode emergency -hexfile {edePath} -edfile {edpPath} -ffufile {ffuPath}";
+
+                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo
+                {
+                    FileName = thor2Path,
+                    Arguments = arguments,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    UseShellExecute = false,
+                    CreateNoWindow = true
+                };
+
+                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                process.StartInfo = startInfo;
+
+                process.OutputDataReceived += new System.Diagnostics.DataReceivedEventHandler((s, ev) =>
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        consoleOutput.AppendText(ev.Data + Environment.NewLine);
+                        consoleOutput.SelectionStart = consoleOutput.Text.Length;
+                        consoleOutput.ScrollToCaret();
+                    });
+                });
+
+                process.ErrorDataReceived += new System.Diagnostics.DataReceivedEventHandler((s, ev) =>
+                {
+                    this.Invoke((MethodInvoker)delegate
+                    {
+                        consoleOutput.AppendText(ev.Data + Environment.NewLine);
+                        consoleOutput.SelectionStart = consoleOutput.Text.Length;
+                        consoleOutput.ScrollToCaret();
+                    });
+                });
+
+                process.Start();
+
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+
+                await Task.Run(() => process.WaitForExit());
+
+                consoleOutput.AppendText("----------------------------\n");
+                consoleOutput.AppendText("Recovery process completed. Check if there are any errors." + Environment.NewLine);
+                consoleOutput.ScrollToCaret();
+            }
+            else
+            {
+                MessageBox.Show("Please select all files before starting the recovery process.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void faqButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This will be implemented in the future.");
+        }
     }
 }
