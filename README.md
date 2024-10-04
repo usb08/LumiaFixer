@@ -16,6 +16,9 @@ If you have issues go to the "Issues" section of this README.
 **"Only Sahara based emergency download is currently supported"**
 
 This issue can usually be fixed by going to your control panel, programs & repairing the install of Windows Device Recovery Tool, if this doesn't work for you [please create an issue](https://github.com/herbodytea/LumiaFixer/issues/new) and we will try to help you.
+## Contributing
+
+Contributions are always welcome! I am not a professional developer by any means and my code can probably be way improved.
 ## Legal
 
 We are not associated with Microsoft or Nokia in any way, LumiaFixer is a program made by a developer fan of Lumia devices.
