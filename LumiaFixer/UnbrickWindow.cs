@@ -112,7 +112,7 @@ namespace LumiaFixer
 
                 string arguments = $"-mode emergency -hexfile {edePath} -edfile {edpPath} -ffufile {ffuPath}";
 
-                int exitCode = await RunProcessAsync(thor2Path, arguments);
+                int exitCode = await RunProcessAsync(thor2Path, arguments, true);
 
                 if (exitCode != 0)
                 {
@@ -124,23 +124,21 @@ namespace LumiaFixer
                 }
 
                 consoleOutput.AppendText("----------------------------\n");
-                consoleOutput.AppendText("Recovery process completed successfully. LumiaFixer will now attempt to restart your device" + Environment.NewLine);
+                consoleOutput.AppendText("Recovery process completed successfully. LumiaFixer will now attempt to restart your device. Please wait..." + Environment.NewLine);
                 consoleOutput.ScrollToCaret();
 
                 string rebootArguments = $"-mode rnd -bootnormalmode";
 
-                int rebootExitCode = await RunProcessAsync(thor2Path, rebootArguments);
+                int rebootExitCode = await RunProcessAsync(thor2Path, rebootArguments, false);
 
                 if (rebootExitCode != 0)
                 {
-                    consoleOutput.AppendText("----------------------------\n");
                     consoleOutput.AppendText("Failed to restart your device. Please restart it manually." + Environment.NewLine);
                     consoleOutput.ScrollToCaret();
 
                     return;
                 }
 
-                consoleOutput.AppendText("----------------------------\n");
                 consoleOutput.AppendText("Device restarted successfully." + Environment.NewLine);
                 consoleOutput.ScrollToCaret();
             }
@@ -155,16 +153,16 @@ namespace LumiaFixer
             MessageBox.Show("This will be implemented in the future.");
         }
 
-        private async Task<int> RunProcessAsync(string fileName, string arguments)
+        private async Task<int> RunProcessAsync(string fileName, string arguments, Boolean logging)
         {
             int exitCode = -1;
+            var tcs = new TaskCompletionSource<int>();
 
             System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo
             {
                 FileName = fileName,
                 Arguments = arguments,
-                RedirectStandardOutput = true,
-                RedirectStandardError = true,
+                RedirectStandardOutput = logging,
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
@@ -172,38 +170,33 @@ namespace LumiaFixer
             using (System.Diagnostics.Process process = new System.Diagnostics.Process())
             {
                 process.StartInfo = startInfo;
+                process.EnableRaisingEvents = true;
 
-                process.OutputDataReceived += new System.Diagnostics.DataReceivedEventHandler((s, ev) =>
+                if (logging)
                 {
-                    this.Invoke((MethodInvoker)delegate
+                    process.OutputDataReceived += new System.Diagnostics.DataReceivedEventHandler((s, ev) =>
                     {
-                        consoleOutput.AppendText(ev.Data + Environment.NewLine);
-                        consoleOutput.SelectionStart = consoleOutput.Text.Length;
-                        consoleOutput.ScrollToCaret();
+                        this.Invoke((MethodInvoker)delegate
+                        {
+                            consoleOutput.AppendText(ev.Data + Environment.NewLine);
+                            consoleOutput.SelectionStart = consoleOutput.Text.Length;
+                            consoleOutput.ScrollToCaret();
+                        });
                     });
-                });
+                }
 
-                process.ErrorDataReceived += new System.Diagnostics.DataReceivedEventHandler((s, ev) =>
+                process.Exited += (s, ev) =>
                 {
-                    this.Invoke((MethodInvoker)delegate
-                    {
-                        consoleOutput.AppendText(ev.Data + Environment.NewLine);
-                        consoleOutput.SelectionStart = consoleOutput.Text.Length;
-                        consoleOutput.ScrollToCaret();
-                    });
-                });
+                    exitCode = process.ExitCode;
+                    tcs.SetResult(exitCode);
+                };
 
                 process.Start();
 
-                process.BeginOutputReadLine();
-                process.BeginErrorReadLine();
+                if (logging) { process.BeginOutputReadLine(); }
 
-                await Task.Run(() => process.WaitForExit());
-
-                exitCode = process.ExitCode;
+                return await tcs.Task;
             }
-
-            return exitCode;
         }
     }
 }
