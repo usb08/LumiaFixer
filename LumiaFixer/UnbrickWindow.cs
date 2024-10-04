@@ -16,6 +16,7 @@ namespace LumiaFixer
         OpenFileDialog FFUPath = new OpenFileDialog();
         OpenFileDialog EDEPath = new OpenFileDialog();
         OpenFileDialog EDPPath = new OpenFileDialog();
+
         public UnbrickWindow()
         {
             InitializeComponent();
