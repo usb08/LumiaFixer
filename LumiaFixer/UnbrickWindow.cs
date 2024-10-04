@@ -112,17 +112,65 @@ namespace LumiaFixer
 
                 string arguments = $"-mode emergency -hexfile {edePath} -edfile {edpPath} -ffufile {ffuPath}";
 
-                System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo
-                {
-                    FileName = thor2Path,
-                    Arguments = arguments,
-                    RedirectStandardOutput = true,
-                    RedirectStandardError = true,
-                    UseShellExecute = false,
-                    CreateNoWindow = true
-                };
+                int exitCode = await RunProcessAsync(thor2Path, arguments);
 
-                System.Diagnostics.Process process = new System.Diagnostics.Process();
+                if (exitCode != 0)
+                {
+                    consoleOutput.AppendText("----------------------------\n");
+                    consoleOutput.AppendText("Recovery process failed. No reboot will be initiated." + Environment.NewLine);
+                    consoleOutput.ScrollToCaret();
+
+                    return;
+                }
+
+                consoleOutput.AppendText("----------------------------\n");
+                consoleOutput.AppendText("Recovery process completed successfully. LumiaFixer will now attempt to restart your device" + Environment.NewLine);
+                consoleOutput.ScrollToCaret();
+
+                string rebootArguments = $"-mode rnd -bootnormalmode";
+
+                int rebootExitCode = await RunProcessAsync(thor2Path, rebootArguments);
+
+                if (rebootExitCode != 0)
+                {
+                    consoleOutput.AppendText("----------------------------\n");
+                    consoleOutput.AppendText("Failed to restart your device. Please restart it manually." + Environment.NewLine);
+                    consoleOutput.ScrollToCaret();
+
+                    return;
+                }
+
+                consoleOutput.AppendText("----------------------------\n");
+                consoleOutput.AppendText("Device restarted successfully." + Environment.NewLine);
+                consoleOutput.ScrollToCaret();
+            }
+            else
+            {
+                MessageBox.Show("Please select all files before starting the recovery process.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void faqButton_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("This will be implemented in the future.");
+        }
+
+        private async Task<int> RunProcessAsync(string fileName, string arguments)
+        {
+            int exitCode = -1;
+
+            System.Diagnostics.ProcessStartInfo startInfo = new System.Diagnostics.ProcessStartInfo
+            {
+                FileName = fileName,
+                Arguments = arguments,
+                RedirectStandardOutput = true,
+                RedirectStandardError = true,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+
+            using (System.Diagnostics.Process process = new System.Diagnostics.Process())
+            {
                 process.StartInfo = startInfo;
 
                 process.OutputDataReceived += new System.Diagnostics.DataReceivedEventHandler((s, ev) =>
@@ -152,19 +200,10 @@ namespace LumiaFixer
 
                 await Task.Run(() => process.WaitForExit());
 
-                consoleOutput.AppendText("----------------------------\n");
-                consoleOutput.AppendText("Recovery process completed. Check if there are any errors." + Environment.NewLine);
-                consoleOutput.ScrollToCaret();
+                exitCode = process.ExitCode;
             }
-            else
-            {
-                MessageBox.Show("Please select all files before starting the recovery process.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
-        private void faqButton_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("This will be implemented in the future.");
+            return exitCode;
         }
     }
 }
