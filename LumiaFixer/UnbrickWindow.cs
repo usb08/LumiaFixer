@@ -22,11 +22,6 @@ namespace LumiaFixer
             InitializeComponent();
         }
 
-        private void UnbrickWindow_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void openWDRTButton_Click(object sender, EventArgs e)
         {
             WDRTPath.ShowDialog();
