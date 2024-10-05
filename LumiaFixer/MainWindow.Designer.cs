@@ -29,64 +29,65 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainWindow));
-            this.lumiaFixerHeading = new System.Windows.Forms.Label();
-            this.lumiaFixerInstructions = new System.Windows.Forms.Label();
-            this.getStartedButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lumiaFixerHeading = new System.Windows.Forms.Label();
+            lumiaFixerInstructions = new System.Windows.Forms.Label();
+            getStartedButton = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // lumiaFixerHeading
             // 
-            this.lumiaFixerHeading.AutoSize = true;
-            this.lumiaFixerHeading.Font = new System.Drawing.Font("Segoe UI Semilight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lumiaFixerHeading.Location = new System.Drawing.Point(12, 9);
-            this.lumiaFixerHeading.Name = "lumiaFixerHeading";
-            this.lumiaFixerHeading.Size = new System.Drawing.Size(137, 40);
-            this.lumiaFixerHeading.TabIndex = 0;
-            this.lumiaFixerHeading.Text = "lumiafixer";
+            lumiaFixerHeading.AutoSize = true;
+            lumiaFixerHeading.Font = new System.Drawing.Font("Segoe UI Semilight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lumiaFixerHeading.Location = new System.Drawing.Point(14, 10);
+            lumiaFixerHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lumiaFixerHeading.Name = "lumiaFixerHeading";
+            lumiaFixerHeading.Size = new System.Drawing.Size(137, 40);
+            lumiaFixerHeading.TabIndex = 0;
+            lumiaFixerHeading.Text = "lumiafixer";
             // 
             // lumiaFixerInstructions
             // 
-            this.lumiaFixerInstructions.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lumiaFixerInstructions.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lumiaFixerInstructions.Location = new System.Drawing.Point(16, 49);
-            this.lumiaFixerInstructions.Name = "lumiaFixerInstructions";
-            this.lumiaFixerInstructions.Size = new System.Drawing.Size(675, 99);
-            this.lumiaFixerInstructions.TabIndex = 1;
-            this.lumiaFixerInstructions.Text = resources.GetString("lumiaFixerInstructions.Text");
+            lumiaFixerInstructions.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lumiaFixerInstructions.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lumiaFixerInstructions.Location = new System.Drawing.Point(19, 60);
+            lumiaFixerInstructions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lumiaFixerInstructions.Name = "lumiaFixerInstructions";
+            lumiaFixerInstructions.Size = new System.Drawing.Size(788, 111);
+            lumiaFixerInstructions.TabIndex = 1;
+            lumiaFixerInstructions.Text = resources.GetString("lumiaFixerInstructions.Text");
             // 
             // getStartedButton
             // 
-            this.getStartedButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.getStartedButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.getStartedButton.Location = new System.Drawing.Point(19, 151);
-            this.getStartedButton.Name = "getStartedButton";
-            this.getStartedButton.Size = new System.Drawing.Size(93, 37);
-            this.getStartedButton.TabIndex = 2;
-            this.getStartedButton.Text = "get started";
-            this.getStartedButton.UseVisualStyleBackColor = true;
-            this.getStartedButton.Click += new System.EventHandler(this.getStartedButton_Click);
+            getStartedButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left;
+            getStartedButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            getStartedButton.Location = new System.Drawing.Point(22, 174);
+            getStartedButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            getStartedButton.Name = "getStartedButton";
+            getStartedButton.Size = new System.Drawing.Size(108, 43);
+            getStartedButton.TabIndex = 2;
+            getStartedButton.Text = "get started";
+            getStartedButton.UseVisualStyleBackColor = true;
+            getStartedButton.Click += getStartedButton_Click;
             // 
             // MainWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(703, 205);
-            this.Controls.Add(this.getStartedButton);
-            this.Controls.Add(this.lumiaFixerInstructions);
-            this.Controls.Add(this.lumiaFixerHeading);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(719, 244);
-            this.MinimumSize = new System.Drawing.Size(719, 244);
-            this.Name = "MainWindow";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LumiaFixer";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.White;
+            ClientSize = new System.Drawing.Size(820, 237);
+            Controls.Add(getStartedButton);
+            Controls.Add(lumiaFixerInstructions);
+            Controls.Add(lumiaFixerHeading);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MaximizeBox = false;
+            MaximumSize = new System.Drawing.Size(836, 276);
+            MinimumSize = new System.Drawing.Size(836, 276);
+            Name = "MainWindow";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "LumiaFixer";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

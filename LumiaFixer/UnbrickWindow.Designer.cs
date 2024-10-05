@@ -29,256 +29,260 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UnbrickWindow));
-            this.lumiaFixerHeading = new System.Windows.Forms.Label();
-            this.lumiaFixerInstructions = new System.Windows.Forms.Label();
-            this.openEDEButton = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.openEDPButton = new System.Windows.Forms.Button();
-            this.EDEPathLabel = new System.Windows.Forms.Label();
-            this.EDPPathLabel = new System.Windows.Forms.Label();
-            this.FFUPathLabel = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.openFFUButton = new System.Windows.Forms.Button();
-            this.lumiaFixerDisclaimer = new System.Windows.Forms.Label();
-            this.startRecoveryButton = new System.Windows.Forms.Button();
-            this.WDRTPathLabel = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.openWDRTButton = new System.Windows.Forms.Button();
-            this.consoleOutput = new System.Windows.Forms.RichTextBox();
-            this.faqButton = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lumiaFixerHeading = new System.Windows.Forms.Label();
+            lumiaFixerInstructions = new System.Windows.Forms.Label();
+            openEDEButton = new System.Windows.Forms.Button();
+            label1 = new System.Windows.Forms.Label();
+            openEDPButton = new System.Windows.Forms.Button();
+            EDEPathLabel = new System.Windows.Forms.Label();
+            EDPPathLabel = new System.Windows.Forms.Label();
+            FFUPathLabel = new System.Windows.Forms.Label();
+            label6 = new System.Windows.Forms.Label();
+            openFFUButton = new System.Windows.Forms.Button();
+            lumiaFixerDisclaimer = new System.Windows.Forms.Label();
+            startRecoveryButton = new System.Windows.Forms.Button();
+            WDRTPathLabel = new System.Windows.Forms.Label();
+            label8 = new System.Windows.Forms.Label();
+            openWDRTButton = new System.Windows.Forms.Button();
+            consoleOutput = new System.Windows.Forms.RichTextBox();
+            faqButton = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // lumiaFixerHeading
             // 
-            this.lumiaFixerHeading.AutoSize = true;
-            this.lumiaFixerHeading.Font = new System.Drawing.Font("Segoe UI Semilight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lumiaFixerHeading.Location = new System.Drawing.Point(12, 9);
-            this.lumiaFixerHeading.Name = "lumiaFixerHeading";
-            this.lumiaFixerHeading.Size = new System.Drawing.Size(137, 40);
-            this.lumiaFixerHeading.TabIndex = 1;
-            this.lumiaFixerHeading.Text = "lumiafixer";
+            lumiaFixerHeading.AutoSize = true;
+            lumiaFixerHeading.Font = new System.Drawing.Font("Segoe UI Semilight", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lumiaFixerHeading.Location = new System.Drawing.Point(14, 10);
+            lumiaFixerHeading.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lumiaFixerHeading.Name = "lumiaFixerHeading";
+            lumiaFixerHeading.Size = new System.Drawing.Size(137, 40);
+            lumiaFixerHeading.TabIndex = 1;
+            lumiaFixerHeading.Text = "lumiafixer";
             // 
             // lumiaFixerInstructions
             // 
-            this.lumiaFixerInstructions.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lumiaFixerInstructions.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lumiaFixerInstructions.Location = new System.Drawing.Point(16, 49);
-            this.lumiaFixerInstructions.Name = "lumiaFixerInstructions";
-            this.lumiaFixerInstructions.Size = new System.Drawing.Size(740, 35);
-            this.lumiaFixerInstructions.TabIndex = 2;
-            this.lumiaFixerInstructions.Text = resources.GetString("lumiaFixerInstructions.Text");
+            lumiaFixerInstructions.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lumiaFixerInstructions.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lumiaFixerInstructions.Location = new System.Drawing.Point(19, 57);
+            lumiaFixerInstructions.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lumiaFixerInstructions.Name = "lumiaFixerInstructions";
+            lumiaFixerInstructions.Size = new System.Drawing.Size(863, 40);
+            lumiaFixerInstructions.TabIndex = 2;
+            lumiaFixerInstructions.Text = resources.GetString("lumiaFixerInstructions.Text");
             // 
             // openEDEButton
             // 
-            this.openEDEButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openEDEButton.Location = new System.Drawing.Point(19, 163);
-            this.openEDEButton.Name = "openEDEButton";
-            this.openEDEButton.Size = new System.Drawing.Size(107, 26);
-            this.openEDEButton.TabIndex = 3;
-            this.openEDEButton.Text = "open EDE file";
-            this.openEDEButton.UseVisualStyleBackColor = true;
-            this.openEDEButton.Click += new System.EventHandler(this.openEDEButton_Click);
+            openEDEButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            openEDEButton.Location = new System.Drawing.Point(22, 188);
+            openEDEButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            openEDEButton.Name = "openEDEButton";
+            openEDEButton.Size = new System.Drawing.Size(125, 30);
+            openEDEButton.TabIndex = 3;
+            openEDEButton.Text = "open EDE file";
+            openEDEButton.UseVisualStyleBackColor = true;
+            openEDEButton.Click += openEDEButton_Click;
             // 
             // label1
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(16, 145);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 15);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "emergency files:";
+            label1.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label1.AutoSize = true;
+            label1.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label1.Location = new System.Drawing.Point(19, 167);
+            label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label1.Name = "label1";
+            label1.Size = new System.Drawing.Size(91, 15);
+            label1.TabIndex = 4;
+            label1.Text = "emergency files:";
             // 
             // openEDPButton
             // 
-            this.openEDPButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openEDPButton.Location = new System.Drawing.Point(19, 195);
-            this.openEDPButton.Name = "openEDPButton";
-            this.openEDPButton.Size = new System.Drawing.Size(107, 26);
-            this.openEDPButton.TabIndex = 5;
-            this.openEDPButton.Text = "open EDP file";
-            this.openEDPButton.UseVisualStyleBackColor = true;
-            this.openEDPButton.Click += new System.EventHandler(this.openEDPButton_Click);
+            openEDPButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            openEDPButton.Location = new System.Drawing.Point(22, 225);
+            openEDPButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            openEDPButton.Name = "openEDPButton";
+            openEDPButton.Size = new System.Drawing.Size(125, 30);
+            openEDPButton.TabIndex = 5;
+            openEDPButton.Text = "open EDP file";
+            openEDPButton.UseVisualStyleBackColor = true;
+            openEDPButton.Click += openEDPButton_Click;
             // 
             // EDEPathLabel
             // 
-            this.EDEPathLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EDEPathLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDEPathLabel.Location = new System.Drawing.Point(132, 163);
-            this.EDEPathLabel.Name = "EDEPathLabel";
-            this.EDEPathLabel.Size = new System.Drawing.Size(624, 26);
-            this.EDEPathLabel.TabIndex = 6;
-            this.EDEPathLabel.Text = "none selected";
-            this.EDEPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            EDEPathLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EDEPathLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            EDEPathLabel.Location = new System.Drawing.Point(154, 188);
+            EDEPathLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            EDEPathLabel.Name = "EDEPathLabel";
+            EDEPathLabel.Size = new System.Drawing.Size(728, 30);
+            EDEPathLabel.TabIndex = 6;
+            EDEPathLabel.Text = "none selected";
+            EDEPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // EDPPathLabel
             // 
-            this.EDPPathLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.EDPPathLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.EDPPathLabel.Location = new System.Drawing.Point(132, 195);
-            this.EDPPathLabel.Name = "EDPPathLabel";
-            this.EDPPathLabel.Size = new System.Drawing.Size(624, 26);
-            this.EDPPathLabel.TabIndex = 7;
-            this.EDPPathLabel.Text = "none selected";
-            this.EDPPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            EDPPathLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            EDPPathLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            EDPPathLabel.Location = new System.Drawing.Point(154, 225);
+            EDPPathLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            EDPPathLabel.Name = "EDPPathLabel";
+            EDPPathLabel.Size = new System.Drawing.Size(728, 30);
+            EDPPathLabel.TabIndex = 7;
+            EDPPathLabel.Text = "none selected";
+            EDPPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // FFUPathLabel
             // 
-            this.FFUPathLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.FFUPathLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FFUPathLabel.Location = new System.Drawing.Point(132, 251);
-            this.FFUPathLabel.Name = "FFUPathLabel";
-            this.FFUPathLabel.Size = new System.Drawing.Size(624, 26);
-            this.FFUPathLabel.TabIndex = 11;
-            this.FFUPathLabel.Text = "none selected";
-            this.FFUPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            FFUPathLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            FFUPathLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            FFUPathLabel.Location = new System.Drawing.Point(154, 290);
+            FFUPathLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            FFUPathLabel.Name = "FFUPathLabel";
+            FFUPathLabel.Size = new System.Drawing.Size(728, 30);
+            FFUPathLabel.TabIndex = 11;
+            FFUPathLabel.Text = "none selected";
+            FFUPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label6
             // 
-            this.label6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(16, 233);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 15);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "firmware:";
+            label6.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label6.AutoSize = true;
+            label6.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label6.Location = new System.Drawing.Point(19, 269);
+            label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label6.Name = "label6";
+            label6.Size = new System.Drawing.Size(55, 15);
+            label6.TabIndex = 9;
+            label6.Text = "firmware:";
             // 
             // openFFUButton
             // 
-            this.openFFUButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openFFUButton.Location = new System.Drawing.Point(19, 251);
-            this.openFFUButton.Name = "openFFUButton";
-            this.openFFUButton.Size = new System.Drawing.Size(107, 26);
-            this.openFFUButton.TabIndex = 8;
-            this.openFFUButton.Text = "open FFU file";
-            this.openFFUButton.UseVisualStyleBackColor = true;
-            this.openFFUButton.Click += new System.EventHandler(this.openFFUButton_Click);
+            openFFUButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            openFFUButton.Location = new System.Drawing.Point(22, 290);
+            openFFUButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            openFFUButton.Name = "openFFUButton";
+            openFFUButton.Size = new System.Drawing.Size(125, 30);
+            openFFUButton.TabIndex = 8;
+            openFFUButton.Text = "open FFU file";
+            openFFUButton.UseVisualStyleBackColor = true;
+            openFFUButton.Click += openFFUButton_Click;
             // 
             // lumiaFixerDisclaimer
             // 
-            this.lumiaFixerDisclaimer.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lumiaFixerDisclaimer.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lumiaFixerDisclaimer.Location = new System.Drawing.Point(16, 294);
-            this.lumiaFixerDisclaimer.Name = "lumiaFixerDisclaimer";
-            this.lumiaFixerDisclaimer.Size = new System.Drawing.Size(740, 34);
-            this.lumiaFixerDisclaimer.TabIndex = 12;
-            this.lumiaFixerDisclaimer.Text = "please note that this process will erase all of your data, your phone will be fla" +
-    "shed again which means it\'ll have none of your data on it, by clicking the butto" +
-    "n below you acknowledge this";
+            lumiaFixerDisclaimer.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            lumiaFixerDisclaimer.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            lumiaFixerDisclaimer.Location = new System.Drawing.Point(19, 339);
+            lumiaFixerDisclaimer.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            lumiaFixerDisclaimer.Name = "lumiaFixerDisclaimer";
+            lumiaFixerDisclaimer.Size = new System.Drawing.Size(863, 39);
+            lumiaFixerDisclaimer.TabIndex = 12;
+            lumiaFixerDisclaimer.Text = "please note that this process will erase all of your data, your phone will be flashed again which means it'll have none of your data on it, by clicking the button below you acknowledge this";
             // 
             // startRecoveryButton
             // 
-            this.startRecoveryButton.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.startRecoveryButton.Location = new System.Drawing.Point(19, 331);
-            this.startRecoveryButton.Name = "startRecoveryButton";
-            this.startRecoveryButton.Size = new System.Drawing.Size(130, 38);
-            this.startRecoveryButton.TabIndex = 13;
-            this.startRecoveryButton.Text = "start recovery";
-            this.startRecoveryButton.UseVisualStyleBackColor = true;
-            this.startRecoveryButton.Click += new System.EventHandler(this.startRecoveryButton_Click);
+            startRecoveryButton.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            startRecoveryButton.Location = new System.Drawing.Point(22, 382);
+            startRecoveryButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            startRecoveryButton.Name = "startRecoveryButton";
+            startRecoveryButton.Size = new System.Drawing.Size(152, 44);
+            startRecoveryButton.TabIndex = 13;
+            startRecoveryButton.Text = "start recovery";
+            startRecoveryButton.UseVisualStyleBackColor = true;
+            startRecoveryButton.Click += startRecoveryButton_Click;
             // 
             // WDRTPathLabel
             // 
-            this.WDRTPathLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.WDRTPathLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.WDRTPathLabel.Location = new System.Drawing.Point(132, 107);
-            this.WDRTPathLabel.Name = "WDRTPathLabel";
-            this.WDRTPathLabel.Size = new System.Drawing.Size(624, 26);
-            this.WDRTPathLabel.TabIndex = 16;
-            this.WDRTPathLabel.Text = "none selected";
-            this.WDRTPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            WDRTPathLabel.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            WDRTPathLabel.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            WDRTPathLabel.Location = new System.Drawing.Point(154, 123);
+            WDRTPathLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            WDRTPathLabel.Name = "WDRTPathLabel";
+            WDRTPathLabel.Size = new System.Drawing.Size(728, 30);
+            WDRTPathLabel.TabIndex = 16;
+            WDRTPathLabel.Text = "none selected";
+            WDRTPathLabel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // label8
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(16, 89);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(259, 15);
-            this.label8.TabIndex = 15;
-            this.label8.Text = "wdrt (windows device recovery tool) path/folder:";
+            label8.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            label8.AutoSize = true;
+            label8.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            label8.Location = new System.Drawing.Point(19, 103);
+            label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            label8.Name = "label8";
+            label8.Size = new System.Drawing.Size(259, 15);
+            label8.TabIndex = 15;
+            label8.Text = "wdrt (windows device recovery tool) path/folder:";
             // 
             // openWDRTButton
             // 
-            this.openWDRTButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.openWDRTButton.Location = new System.Drawing.Point(19, 107);
-            this.openWDRTButton.Name = "openWDRTButton";
-            this.openWDRTButton.Size = new System.Drawing.Size(107, 26);
-            this.openWDRTButton.TabIndex = 14;
-            this.openWDRTButton.Text = "open WDRT path";
-            this.openWDRTButton.UseVisualStyleBackColor = true;
-            this.openWDRTButton.Click += new System.EventHandler(this.openWDRTButton_Click);
+            openWDRTButton.Font = new System.Drawing.Font("Segoe UI Semilight", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            openWDRTButton.Location = new System.Drawing.Point(22, 123);
+            openWDRTButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            openWDRTButton.Name = "openWDRTButton";
+            openWDRTButton.Size = new System.Drawing.Size(125, 30);
+            openWDRTButton.TabIndex = 14;
+            openWDRTButton.Text = "open WDRT path";
+            openWDRTButton.UseVisualStyleBackColor = true;
+            openWDRTButton.Click += openWDRTButton_Click;
             // 
             // consoleOutput
             // 
-            this.consoleOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.consoleOutput.BackColor = System.Drawing.Color.Black;
-            this.consoleOutput.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.consoleOutput.ForeColor = System.Drawing.Color.White;
-            this.consoleOutput.Location = new System.Drawing.Point(19, 375);
-            this.consoleOutput.Name = "consoleOutput";
-            this.consoleOutput.ReadOnly = true;
-            this.consoleOutput.Size = new System.Drawing.Size(737, 112);
-            this.consoleOutput.TabIndex = 17;
-            this.consoleOutput.Text = "";
+            consoleOutput.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
+            consoleOutput.BackColor = System.Drawing.Color.Black;
+            consoleOutput.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            consoleOutput.ForeColor = System.Drawing.Color.White;
+            consoleOutput.Location = new System.Drawing.Point(22, 433);
+            consoleOutput.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            consoleOutput.Name = "consoleOutput";
+            consoleOutput.ReadOnly = true;
+            consoleOutput.Size = new System.Drawing.Size(859, 129);
+            consoleOutput.TabIndex = 17;
+            consoleOutput.Text = "";
             // 
             // faqButton
             // 
-            this.faqButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.faqButton.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.faqButton.Location = new System.Drawing.Point(608, 331);
-            this.faqButton.Name = "faqButton";
-            this.faqButton.Size = new System.Drawing.Size(148, 38);
-            this.faqButton.TabIndex = 18;
-            this.faqButton.Text = "i have an issue";
-            this.faqButton.UseVisualStyleBackColor = true;
-            this.faqButton.Click += new System.EventHandler(this.faqButton_Click);
+            faqButton.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right;
+            faqButton.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            faqButton.Location = new System.Drawing.Point(708, 382);
+            faqButton.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            faqButton.Name = "faqButton";
+            faqButton.Size = new System.Drawing.Size(173, 44);
+            faqButton.TabIndex = 18;
+            faqButton.Text = "i have an issue";
+            faqButton.UseVisualStyleBackColor = true;
+            faqButton.Click += faqButton_Click;
             // 
             // UnbrickWindow
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(768, 499);
-            this.Controls.Add(this.faqButton);
-            this.Controls.Add(this.consoleOutput);
-            this.Controls.Add(this.WDRTPathLabel);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.openWDRTButton);
-            this.Controls.Add(this.startRecoveryButton);
-            this.Controls.Add(this.lumiaFixerDisclaimer);
-            this.Controls.Add(this.FFUPathLabel);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.openFFUButton);
-            this.Controls.Add(this.EDPPathLabel);
-            this.Controls.Add(this.EDEPathLabel);
-            this.Controls.Add(this.openEDPButton);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.openEDEButton);
-            this.Controls.Add(this.lumiaFixerInstructions);
-            this.Controls.Add(this.lumiaFixerHeading);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(784, 538);
-            this.Name = "UnbrickWindow";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "LumiaFixer";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.White;
+            ClientSize = new System.Drawing.Size(896, 576);
+            Controls.Add(faqButton);
+            Controls.Add(consoleOutput);
+            Controls.Add(WDRTPathLabel);
+            Controls.Add(label8);
+            Controls.Add(openWDRTButton);
+            Controls.Add(startRecoveryButton);
+            Controls.Add(lumiaFixerDisclaimer);
+            Controls.Add(FFUPathLabel);
+            Controls.Add(label6);
+            Controls.Add(openFFUButton);
+            Controls.Add(EDPPathLabel);
+            Controls.Add(EDEPathLabel);
+            Controls.Add(openEDPButton);
+            Controls.Add(label1);
+            Controls.Add(openEDEButton);
+            Controls.Add(lumiaFixerInstructions);
+            Controls.Add(lumiaFixerHeading);
+            Icon = (System.Drawing.Icon)resources.GetObject("$this.Icon");
+            Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            MinimumSize = new System.Drawing.Size(912, 615);
+            Name = "UnbrickWindow";
+            StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            Text = "LumiaFixer";
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
