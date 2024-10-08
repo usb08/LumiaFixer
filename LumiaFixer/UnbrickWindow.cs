@@ -152,7 +152,8 @@ namespace LumiaFixer
 
         private void faqButton_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("This will be implemented in the future.");
+            IssuesWindow issuesWindow = new IssuesWindow();
+            issuesWindow.Show();
         }
 
         private void DisableUI()

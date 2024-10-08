@@ -229,6 +229,7 @@
             // 
             consoleOutput.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             consoleOutput.BackColor = System.Drawing.Color.Black;
+            consoleOutput.BorderStyle = System.Windows.Forms.BorderStyle.None;
             consoleOutput.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             consoleOutput.ForeColor = System.Drawing.Color.White;
             consoleOutput.Location = new System.Drawing.Point(22, 433);
